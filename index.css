@@ -1,0 +1,86 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #04131C;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    user-select: none;
+}
+
+img {
+    width: 90px;
+    margin-top: 50px;
+}
+
+h1{
+    font-size: 25px;
+    margin: 17px auto 19px;
+}
+
+textarea {
+    background-color: #444059;
+    height: 118px; 
+    width: 317px;
+    border-radius: 8px;
+    border: none;
+    margin: 19px 36px 9px;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    resize: none;
+    
+}
+
+.from-to {
+    display: flex;
+    gap: 10px;
+    width: 317px;
+    margin: 0px auto 10px;
+    
+}
+
+input {
+    width: 150px;
+    border-radius: 8px;
+    border: none;
+    background-color: #444059;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    height: 40px;
+    
+}
+
+button {
+    background: #28A9F1;
+    color: 04131C;
+    border: none;
+    border-radius: 8px;
+    padding: 20px 120px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+}
+
+li {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    text-align: left;
+    background: #FFFFFF;
+    color: #1B1924;
+    margin: auto;
+    width: 300px;
+    
+    padding: 15px;
+}
+
+.to-heart {
+    display: flex;
+    justify-content: space-between;
+}
