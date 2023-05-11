@@ -18,17 +18,21 @@ const toInput = document.getElementById("to-inpt")
 const btn = document.getElementById("btn")
 const endorsements = document.getElementById("endorsements")
 
-btn.addEventListener('click', function(){
-    let input = txtInpt.value 
+btn.addEventListener('click', function () {
+    let input = txtInpt.value
     let frm = fromInpt.value
     let to = toInput.value
 
-    
-    
-    push(endorsementsInDB, input)
-    push(fromInDB, frm)
-    push(toInDB, to)
-    clearTxtInpt()
+    if (input === "" || frm === "" || to === "") {
+        endorsements.innerHTML = "<p>Please enter an endorsement, who it's from, and who its to!</p>"
+    }
+    else {
+
+        push(endorsementsInDB, input)
+        push(fromInDB, frm)
+        push(toInDB, to)
+        clearTxtInpt()
+    }
 })
 
 function clearTxtInpt() {
@@ -37,36 +41,36 @@ function clearTxtInpt() {
     toInput.value = ""
 }
 
-onValue(endorsementsInDB, function(snapshot) {
-    if(snapshot.exists()) {
+onValue(endorsementsInDB, function (snapshot) {
+    if (snapshot.exists()) {
         let endArray = Object.entries(snapshot.val())
-        onValue(fromInDB, function(snapshot){
-            if(snapshot.exists()) {
+        onValue(fromInDB, function (snapshot) {
+            if (snapshot.exists()) {
                 let fromArray = Object.entries(snapshot.val())
-                onValue(toInDB, function(snapshot){
-                    if(snapshot.exists()) {
+                onValue(toInDB, function (snapshot) {
+                    if (snapshot.exists()) {
                         let toArray = Object.entries(snapshot.val())
-                        
+
                         clearEndorsements()
-                        
-                        for(let i = 0; i < endArray.length; i++) {
+
+                        for (let i = 0; i < endArray.length; i++) {
                             let endItem = endArray[i]
                             let fromItem = fromArray[i]
                             let toItem = toArray[i]
                             appendEndItem(endItem, fromItem, toItem)
-        }
-                        
                         }
-                    })
-            
+
+                    }
+                })
+
             }
         })
-        
 
-        
-        
-        
-        
+
+
+
+
+
     } else {
         endorsements.innerHTML = "<p>No endorsements yet, type one up!</p>"
     }
@@ -92,24 +96,24 @@ function appendEndItem(endItem, fromItem, toItem) {
     let fromItemValue = fromItem[1]
     let toItemID = toItem[0]
     let toItemValue = toItem[1]
-    
-    
+
+
     let newEl = document.createElement("li")
-    
-    
+
+
     newEl.innerHTML = `<h3>From ${fromItemValue}</h3>`
     newEl.innerHTML += `<p>${endItemValue}</p>`
     newEl.innerHTML += `<div class="to-heart"> <h3>To ${toItemValue}</h3> <h3>❤️ <span id="like${endItemID}">0</span></h3></div>`
-    
-    
-    
-    newEl.addEventListener("click", function() {
+
+
+
+    newEl.addEventListener("click", function () {
         const like = document.getElementById(`like${endItemID}`)
         console.log(Number(like.textContent) + 1)
         like.innerHTML = Number(like.textContent) + 1
         //let exactLocationOfItemInDB = ref(database, `endorsements/${itemID}`)
         //remove(exactLocationOfItemInDB)
     })
-    
+
     endorsements.append(newEl)
 }
