@@ -24,7 +24,11 @@ btn.addEventListener('click', function () {
     let to = toInput.value
 
     if (input === "" || frm === "" || to === "") {
-        endorsements.innerHTML += "<p>Please enter an endorsement, who it's from, and who its to!</p>"
+        if(endorsements.innerHTML.includes("Please enter an endorsement, who it's from, and who its to!") {
+            
+           } else {
+                endorsements.innerHTML += "<p>Please enter an endorsement, who it's from, and who its to!</p>"
+        }
     }
     else {
 
