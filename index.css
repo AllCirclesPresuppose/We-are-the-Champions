@@ -93,4 +93,6 @@ li {
 
 .to-heart:hover {
     cursor: pointer;
+    background-color: #fceade;
+
 }
