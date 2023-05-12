@@ -91,7 +91,7 @@ li {
     justify-content: space-between;
 }
 
-.to-heart:hover {
+li:hover {
     cursor: pointer;
     background-color: #fceade;
 
