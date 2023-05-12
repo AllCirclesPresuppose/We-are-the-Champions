@@ -7,6 +7,8 @@ body {
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
     user-select: none;
+    margin: auto;
+    width: 320px;
 }
 
 img {
@@ -22,10 +24,10 @@ h1 {
 textarea {
     background-color: #444059;
     height: 118px;
-    width: 317px;
+    width: 320px;
     border-radius: 8px;
     border: none;
-    margin: 19px 36px 9px;
+    margin: 19px 0px 9px;
     color: #FFFFFF;
     font-family: 'Inter', sans-serif;
     resize: none;
@@ -34,9 +36,10 @@ textarea {
 
 .from-to {
     display: flex;
-    gap: 10px;
-    width: 317px;
-    margin: 0px auto 10px;
+    width: 320;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 10px;
 
 }
 
@@ -55,6 +58,7 @@ button {
     background: #28A9F1;
     color: #04131C;
     border: none;
+    width: 323px;
     border-radius: 8px;
     padding: 20px 120px;
     font-weight: bold;
@@ -94,5 +98,4 @@ li {
 li:hover {
     cursor: pointer;
     background-color: #fceade;
-
 }
